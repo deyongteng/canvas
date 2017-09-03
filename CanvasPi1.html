@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvar"></canvas>
+<script>
+    var canvas = document.getElementById("canvar");
+    var context = canvas.getContext("2d");
+    canvas.width=1024;
+    canvas.height=780;
+    context.lineWidth=1;
+    context.strokeStyle="#0055888";
+
+    for (var i=0; i<10; i++){
+        context.beginPath();
+        context.arc(50+i*100,60,40,0,2*Math.PI*(i+1)/10);
+        context.closePath();
+
+        context.stroke();
+    }
+
+    for (var i=0; i<10; i++){
+        context.beginPath();
+        context.arc(50+i*100,180,40,0,2*Math.PI*(i+1)/10);
+
+        context.stroke();
+    }
+    for (var i=0; i<10; i++){
+        context.beginPath();
+        context.arc(50+i*100,300,40,0,2*Math.PI*(i+1)/10,true);
+        context.closePath();
+        context.stroke();
+    }
+
+</script>
+</body>
+</html>
